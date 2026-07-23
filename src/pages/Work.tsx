@@ -4,15 +4,7 @@ import { VideoCard } from "@/components/VideoCard";
 import { VideoPlayerDialog } from "@/components/VideoPlayerDialog";
 import { projects, type Project, type Platform } from "@/data/projects";
 
-const FILTERS: (Platform | "All")[] = [
-  "All",
-  "Talking Head",
-  "Motion Graphics",
-  "Gaming",
-  "AMV",
-  "Sports",
-  "Event",
-];
+const FILTERS: (Platform | "All")[] = ["All", "Reels", "TikTok", "Shorts", "Commercial"];
 const Work = () => {
   const [active, setActive] = useState<Project | null>(null);
   const [open, setOpen] = useState(false);
