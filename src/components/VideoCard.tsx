@@ -25,17 +25,17 @@ export function VideoCard({ project, onPlay, index = 0 }: VideoCardProps) {
           onPlay(project);
         }
       }}
-      className="group block w-full text-left animate-fade-in-up focus:outline-none"
+      className="group block w-full text-left animate-fade-in-up transition-all duration-300 hover:-translate-y-1 focus:outline-none"
       style={{ animationDelay: `${index * 60}ms` }}
       aria-label={`Play ${project.title}`}
     >
       <div
-        className={`${aspectClass} relative overflow-hidden rounded-lg border border-border bg-card`}
+        className={`${aspectClass} relative overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-2xl`}
       >
         <img
           src={project.coverImage}
           alt={project.title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
         />
         {/* Bottom gradient for legibility */}
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -59,7 +59,7 @@ export function VideoCard({ project, onPlay, index = 0 }: VideoCardProps) {
 
         {/* Title */}
         <div className="absolute inset-x-0 bottom-0 p-4">
-          <h3 className="font-serif-display text-2xl leading-tight text-white">
+          <h3 className="font-serif-display text-2xl leading-tight text-white transition-all duration-300 group-hover:-translate-y-1">
             {project.title}
           </h3>
          
