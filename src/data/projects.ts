@@ -54,7 +54,7 @@ export const projects: Project[] = [
     platform: "Reels",
     duration: "0:15",
     aspectRatio: "9:16",
-    videoUrl: "https://vimeo.com/1212420470?share=copy&fl=sv&fe=ci",
+    videoUrl: "https://vimeo.com/1212420470?fl=tl&fe=ec",
     videoType: "vimeo",
   },
   {
