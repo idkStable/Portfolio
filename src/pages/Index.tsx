@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { VideoCard } from "@/components/VideoCard";
 import { VideoPlayerDialog } from "@/components/VideoPlayerDialog";
 import { projects, type Project, type Platform } from "@/data/projects";
+import { Link } from "react-router-dom";
 
 
 
@@ -81,12 +82,12 @@ const Index = () => {
           <p className="font-serif-display text-3xl italic text-foreground">
             Have an edit in mind?
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="font-pixel text-lg uppercase tracking-widest text-primary hover:underline"
           >
             → get in touch
-          </a>
+          </Link>
           <p className="mt-6 font-pixel text-sm uppercase tracking-widest text-muted-foreground">
             © {new Date().getFullYear()} Sameer Meena
           </p>
