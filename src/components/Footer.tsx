@@ -15,8 +15,8 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Based in</p>
               <div className="text-sm space-y-1">
-                <p>Available worldwide</p>
-                <p>Working remotely</p>
+                <p>India</p>
+                <p>Working Worldwide</p>
               </div>
             </div>
 
@@ -32,16 +32,16 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Contact</p>
               <div className="text-sm space-y-1">
-                <a href="mailto:hello@sameermeena.com" className="block hover-highlight">
-                  hello@sameermeena.com
+                <a href="mailto:sameerbasanwal@Gmail.com" className="block hover-highlight">
+                  sameerbasanwal@Gmail.com
                 </a>
                 <a
-                  href="https://instagram.com/sameermeena"
+                  href="https://instagram.com/ss.ameer_"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block hover-highlight"
                 >
-                  @sameermeena
+                  @ss.ameer_
                 </a>
               </div>
             </div>
@@ -78,7 +78,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           <div className="space-y-2">
             <p className="font-serif-display text-2xl">Sameer Meena</p>
             <p className="font-pixel text-sm uppercase tracking-widest text-muted-foreground">
-              short-form video editor
+              video editor
             </p>
           </div>
 
