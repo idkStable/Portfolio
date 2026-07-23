@@ -1,17 +1,10 @@
 import { Layout } from "@/components/Layout";
 
-const clients = [
-  "Nomad Apparel",
-  "Nova",
-  "Rep Club",
-  "Kōhī Roasters",
-  "Vault Esports",
-  "Alto Studio",
-];
+
 
 const expertise = [
   "Reels",
-  "TikTok",
+  "Talking Heads",
   "YouTube Shorts",
   "Motion Graphics",
   "Color Grading",
@@ -33,14 +26,14 @@ const About = () => {
 
             <div className="mt-8 space-y-5 text-lg md:text-xl leading-relaxed text-muted-foreground animate-fade-in-up">
               <p>
-                I'm a <span className="text-foreground">short-form video editor</span>{" "}
-                working with creators, founders, and small brands to make reels, shorts,
-                and social-first edits that actually get watched.
+                I'm a <span className="text-foreground">video editor</span> creating
+                high-retention content for creators, founders, and brands. I focus on
+                pacing, storytelling, and motion that keeps people watching.
               </p>
               <p>
-                My edits lean on rhythm — sound design, pacing, and typography working
-                together — instead of trend chasing. I like tight cuts, clear stories,
-                and a color grade that feels like the room it was shot in.
+                From talking heads and motion graphics to gaming edits and commercials,
+                I create content that's clean, engaging, and built for today's attention
+                span.
               </p>
               <p>
                 When I'm not editing, I'm usually breaking down other people's edits
@@ -49,14 +42,7 @@ const About = () => {
             </div>
           </div>
 
-          <div>
-            <p className="text-label mb-4">Selected clients</p>
-            <ul className="grid grid-cols-2 gap-y-2 md:grid-cols-3">
-              {clients.map((c) => (
-                <li key={c} className="text-lg">{c}</li>
-              ))}
-            </ul>
-          </div>
+          
 
           <div>
             <p className="text-label mb-4">What I do</p>
