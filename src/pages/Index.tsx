@@ -39,9 +39,9 @@ const Index = () => {
             <div className="sticky-note absolute -top-6 right-16 hidden w-40 rotate-6 rounded-sm p-4 md:block">
               <p className="font-pixel text-lg leading-tight uppercase text-accent-foreground">
                 
-                video
+                Video
                 <br />
-                editor
+                Editor
               </p>
             </div>
 
