@@ -59,7 +59,7 @@ export const projects: Project[] = [
   },
   {
     id: "nova-apparel",
-    title: "Nova Apparel",
+    title: "Michael Jordan",
     category: "Commercial",
     tags: ["COMMERCIAL", "FASHION"],
     year: "2026",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     id: "iron-and-neon",
-    title: "Iron & Neon",
+    title: "AI vs Human Creativity",
     category: "Reels",
     tags: ["REEL", "FITNESS"],
     year: "2026",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: "morning-ritual",
-    title: "Morning Ritual",
+    title: "Who You Help",
     category: "Shorts",
     tags: ["SHORT", "F&B"],
     year: "2025",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   },
   {
     id: "the-process",
-    title: "The Process",
+    title: "Unconventional Party",
     category: "TikTok",
     tags: ["TIKTOK", "BTS"],
     year: "2025",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: "hyper-highlights",
-    title: "Hyper Highlights",
+    title: "Founder Stories",
     category: "Shorts",
     tags: ["SHORT", "GAMING"],
     year: "2025",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
   },
   {
     id: "founder-story",
-    title: "Founder Story",
+    title: "Infuse SMP",
     category: "Commercial",
     tags: ["COMMERCIAL", "DOC"],
     year: "2025",
@@ -155,7 +155,7 @@ export const projects: Project[] = [
   },
   {
     id: "kinetic-type",
-    title: "Kinetic Type",
+    title: "Anime Edit",
     category: "Reels",
     tags: ["REEL", "MOTION"],
     year: "2024",
