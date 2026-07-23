@@ -67,7 +67,7 @@ export const projects: Project[] = [
     description: "A 30-second brand spot built on tight product cutaways, kinetic typography, and a slow color-graded push into a hero silhouette.",
     coverImage: michaelJordan,
     images: [michaelJordan],
-    platform: "Sports"
+    platform: "Sports",
     duration: "1:49",
     aspectRatio: "9:16",
     videoUrl: "https://vimeo.com/1212420456?fl=tl&fe=ec",
