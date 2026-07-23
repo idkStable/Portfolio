@@ -20,7 +20,7 @@ const Index = () => {
 
   return (
     <Layout hideFooter>
-      <section className="container-wide py-8 md:py-12">
+      <section className="container-wide py-8 md:py-4">
         {/* Folder-style hero card */}
         <div className="relative mx-auto max-w-5xl">
           {/* Left tab */}
