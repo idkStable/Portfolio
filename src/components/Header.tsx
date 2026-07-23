@@ -4,7 +4,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const navItems = [
-  { label: "Projects", path: "/work" },
+  { label: "Work", path: "/work" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
@@ -29,95 +29,76 @@ export function Header({ revealMode = false }: HeaderProps) {
       setIsVisible(true);
       return;
     }
-
-    const handleMouseMove = (e: MouseEvent) => {
-      setIsVisible(e.clientY < 100);
-    };
-
+    const handleMouseMove = (e: MouseEvent) => setIsVisible(e.clientY < 100);
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [revealMode]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 -translate-y-full pointer-events-none'
+    <header
+      className={`sticky top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-500 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       }`}
     >
-      <div className="container-wide relative">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo */}
-          <Link 
-            to="/" 
-            className="font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
-          >
-            Jordan Studio
+      <div className="container-wide">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Wordmark */}
+          <Link to="/" className="flex items-baseline gap-2 hover:opacity-70 transition-opacity">
+            <span className="font-serif-display text-2xl md:text-3xl leading-none text-foreground">
+              Sameer Meena
+            </span>
+            <span className="hidden md:inline font-pixel text-sm uppercase tracking-widest text-muted-foreground">
+              — video editor
+            </span>
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-xs font-sans tracking-widest uppercase transition-all duration-300 hover:tracking-[0.2em] ${
+                className={`font-pixel text-sm uppercase tracking-widest transition-colors ${
                   location.pathname === item.path
                     ? "text-foreground"
-                    : "text-foreground/80 hover:text-foreground"
+                    : "text-foreground/60 hover:text-foreground"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-foreground/60 hover:text-foreground transition-colors"
+              aria-label="Toggle theme"
+            >
+              {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
+            </button>
           </nav>
 
-          {/* Right - Theme Toggle */}
-          <div className="hidden md:flex items-center">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-foreground/60 hover:text-foreground transition-colors"
-              aria-label="Toggle theme"
-            >
-              {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Mobile */}
           <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-foreground/60 hover:text-foreground transition-colors"
-              aria-label="Toggle theme"
-            >
+            <button onClick={toggleTheme} className="p-2" aria-label="Toggle theme">
               {mounted && (theme === "dark" ? <Sun size={18} /> : <Moon size={18} />)}
             </button>
-            <button
-              className="p-2 -mr-2 text-foreground"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <button className="p-2 -mr-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-background z-40 animate-fade-in">
-          <nav className="container-wide py-12 flex flex-col gap-8">
+        <div className="md:hidden fixed inset-0 top-16 bg-background z-40 animate-fade-in">
+          <nav className="container-wide py-12 flex flex-col gap-6">
             {navItems.map((item, index) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-4xl font-display text-foreground animate-fade-in-up"
+                className="font-serif-display text-4xl text-foreground animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.label}

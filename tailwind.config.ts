@@ -13,15 +13,14 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       fontFamily: {
-        display: ['Syne', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        pixel: ['VT323', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -57,9 +56,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        hover: {
-          bg: "hsl(var(--hover-bg))",
-        },
+        hover: { bg: "hsl(var(--hover-bg))" },
         separator: "hsl(var(--separator))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
