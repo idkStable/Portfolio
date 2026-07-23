@@ -62,9 +62,7 @@ export function VideoCard({ project, onPlay, index = 0 }: VideoCardProps) {
           <h3 className="font-serif-display text-2xl leading-tight text-white">
             {project.title}
           </h3>
-          <p className="mt-0.5 text-xs uppercase tracking-widest text-white/70">
-            {project.client}
-          </p>
+         
         </div>
       </div>
     </button>
