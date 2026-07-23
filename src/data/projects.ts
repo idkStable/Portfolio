@@ -1,11 +1,11 @@
-import neonPortrait from "@/assets/neon-portrait.jpg";
-import lightSilhouette from "@/assets/light-silhouette.jpg";
-import tarotCards from "@/assets/tarot-cards.jpg";
-import prismaticPortrait from "@/assets/prismatic-portrait.jpg";
-import digitalWaves from "@/assets/digital-waves.jpg";
-import abstractPaint from "@/assets/abstract-paint.jpg";
-import abstractLayers from "@/assets/abstract-layers.jpg";
-import fluidArt from "@/assets/fluid-art.jpg";
+import aiCreativity from "@/assets/ai-creativity.png";
+import michaelJordan from "@/assets/michael-jordan.png";
+import creatorCategories from "@/assets/creator-categories.png";
+import founderStories from "@/assets/founder-stories.png";
+import partyEvent from "@/assets/party-event.png";
+import oneLiner from "@/assets/one-liner.png";
+import minecraftSmp from "@/assets/minecraft-smp.png";
+import animeEdit from "@/assets/anime-edit.png";
 
 export type Platform = "Reels" | "TikTok" | "Shorts" | "Commercial";
 export type VideoType = "youtube" | "vimeo" | "mp4";
@@ -49,8 +49,8 @@ export const projects: Project[] = [
     year: "2026",
     client: "Nomad Apparel",
     description: "A fast-cut lifestyle reel following golden-hour skate lines through the city, edited to a punchy hip-hop bed with beat-synced whip pans.",
-    coverImage: neonPortrait,
-    images: [neonPortrait],
+    coverImage: aiCreativity,
+    images: [aiCreativity],
     platform: "Reels",
     duration: "0:15",
     aspectRatio: "9:16",
@@ -65,8 +65,8 @@ export const projects: Project[] = [
     year: "2026",
     client: "Nova",
     description: "A 30-second brand spot built on tight product cutaways, kinetic typography, and a slow color-graded push into a hero silhouette.",
-    coverImage: lightSilhouette,
-    images: [lightSilhouette],
+    coverImage: michaelJordan,
+    images: [michaelJordan],
     platform: "Commercial",
     duration: "0:30",
     aspectRatio: "9:16",
@@ -81,8 +81,8 @@ export const projects: Project[] = [
     year: "2026",
     client: "Rep Club",
     description: "High-energy gym reel — slow-motion lifts intercut with neon-lit close-ups. Sound-design layered with breath, chalk, and impact.",
-    coverImage: tarotCards,
-    images: [tarotCards],
+    coverImage: creatorCategories,
+    images: [creatorCategories],
     platform: "Reels",
     duration: "0:12",
     aspectRatio: "9:16",
@@ -97,8 +97,8 @@ export const projects: Project[] = [
     year: "2025",
     client: "Kōhī Roasters",
     description: "A slow-cinema short for a specialty coffee brand — symmetrical composition, ambient sound, and a single vertical camera move.",
-    coverImage: prismaticPortrait,
-    images: [prismaticPortrait],
+    coverImage: founderStories,
+    images: [founderStories],
     platform: "Shorts",
     duration: "0:15",
     aspectRatio: "9:16",
@@ -113,8 +113,8 @@ export const projects: Project[] = [
     year: "2025",
     client: "Personal",
     description: "Behind-the-scenes edit walking through timeline, sound design, and color for a client reel. Captions cut on the beat.",
-    coverImage: digitalWaves,
-    images: [digitalWaves],
+    coverImage: partyEvent,
+    images: [partyEvent],
     platform: "TikTok",
     duration: "0:45",
     aspectRatio: "9:16",
@@ -129,8 +129,8 @@ export const projects: Project[] = [
     year: "2025",
     client: "Vault Esports",
     description: "Highlight reel for a competitive Valorant team — quick cuts, sound-effect stingers, and animated score overlays.",
-    coverImage: abstractPaint,
-    images: [abstractPaint],
+    coverImage: oneLiner,
+    images: [oneLiner],
     platform: "Shorts",
     duration: "0:20",
     aspectRatio: "9:16",
@@ -145,8 +145,8 @@ export const projects: Project[] = [
     year: "2025",
     client: "Alto Studio",
     description: "Documentary-style founder interview cut to feel warm and human, with vertical b-roll and a soft ambient score.",
-    coverImage: abstractLayers,
-    images: [abstractLayers],
+    coverImage: minecraftSmp,
+    images: [minecraftSmp],
     platform: "Commercial",
     duration: "0:60",
     aspectRatio: "9:16",
@@ -161,8 +161,8 @@ export const projects: Project[] = [
     year: "2024",
     client: "Type Foundry",
     description: "Kinetic-typography reel exploring rhythm between voice-over cadence and letter-level animation. Motion-designed in After Effects.",
-    coverImage: fluidArt,
-    images: [fluidArt],
+    coverImage: animeEdit,
+    images: [animeEdit],
     platform: "Reels",
     duration: "0:22",
     aspectRatio: "9:16",
