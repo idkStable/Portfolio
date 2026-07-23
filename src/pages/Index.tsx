@@ -48,7 +48,7 @@ const Index = () => {
             {/* Wordmark */}
             <div className="flex flex-col items-center justify-center py-10 md:py-16">
               <p className="font-pixel text-lg uppercase tracking-widest text-muted-foreground">
-                the work of
+                Selected Work
               </p>
               <h1 className="mt-2 text-center font-serif-display text-6xl leading-none tracking-tight text-foreground md:text-[9rem]">
                 portfolio
