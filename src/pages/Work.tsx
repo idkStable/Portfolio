@@ -24,21 +24,7 @@ const Work = () => {
               Selected edits
             </h1>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {FILTERS.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`rounded-full border px-4 py-1.5 font-pixel text-sm uppercase tracking-widest transition-all ${
-                  filter === f
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border text-foreground/70 hover:border-foreground hover:text-foreground"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+          
         </div>
       </section>
 
