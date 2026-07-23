@@ -38,8 +38,7 @@ const Index = () => {
             {/* Sticky note */}
             <div className="sticky-note absolute -top-6 right-16 hidden w-40 rotate-6 rounded-sm p-4 md:block">
               <p className="font-pixel text-lg leading-tight uppercase text-accent-foreground">
-                Short-form
-                <br />
+                
                 video
                 <br />
                 editor
