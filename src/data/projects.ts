@@ -54,7 +54,7 @@ export const projects: Project[] = [
     platform: "Reels",
     duration: "0:15",
     aspectRatio: "9:16",
-    videoUrl: "https://vimeo.com/1212420470?fl=tl&fe=ec",
+    videoUrl: "https://vimeo.com/1212420458?share=copy",
     videoType: "vimeo",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     platform: "Reels",
     duration: "0:12",
     aspectRatio: "9:16",
-    videoUrl: "https://vimeo.com/1212420458?fl=tl&fe=ec",
+    videoUrl: "https://vimeo.com/1212420470?fl=tl&fe=ec",
     videoType: "vimeo",
   },
   {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     platform: "Shorts",
     duration: "0:15",
     aspectRatio: "9:16",
-    videoUrl: "https://vimeo.com/1212421807?fl=tl&fe=ec",
+    videoUrl: "https://vimeo.com/1212422654?fl=tl&fe=ec",
     videoType: "vimeo",
   },
   {
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     platform: "Shorts",
     duration: "0:20",
     aspectRatio: "9:16",
-    videoUrl: "https://vimeo.com/1212422654?fl=tl&fe=ec",
+    videoUrl: "https://vimeo.com/1212421807?fl=tl&fe=ec",
     videoType: "vimeo",
   },
   {
