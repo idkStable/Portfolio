@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { Mail, Instagram, Youtube } from "lucide-react";
+import { Mail, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -23,37 +23,29 @@ const Contact = () => {
 
           <div className="space-y-4">
             <a
-              href="mailto:hello@sameermeena.com"
+              href="mailto:sameerbasanwal@Gmail.com"
               className="flex items-center gap-4 text-lg hover-highlight group"
             >
               <Mail size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-              <span>hello@sameermeena.com</span>
+              <span>sameerbasanwal@gmail.com</span>
             </a>
 
             <a
-              href="https://instagram.com/sameermeena"
+              href="https://instagram.com/ss.ameer_"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-lg hover-highlight group"
             >
               <Instagram size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-              <span>@sameermeena</span>
+              <span>@ss.ameer_</span>
             </a>
 
-            <a
-              href="https://youtube.com/@sameermeena"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 text-lg hover-highlight group"
-            >
-              <Youtube size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-              <span>youtube.com/@sameermeena</span>
-            </a>
+            
           </div>
 
           <div>
             <p className="text-label mb-2">Based</p>
-            <p className="text-lg">Working remotely · available worldwide</p>
+            <p className="text-lg">India · Working worldwide</p>
           </div>
         </div>
       </section>
