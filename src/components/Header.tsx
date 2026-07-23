@@ -49,9 +49,7 @@ export function Header({ revealMode = false }: HeaderProps) {
             <span className="font-serif-display text-2xl md:text-3xl leading-none text-foreground">
               Sameer Meena
             </span>
-            <span className="hidden md:inline font-pixel text-sm uppercase tracking-widest text-muted-foreground">
-              — video editor
-            </span>
+            
           </Link>
 
           {/* Desktop nav */}
