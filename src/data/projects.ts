@@ -43,7 +43,7 @@ const SAMPLE = {
 export const projects: Project[] = [
   {
     id: "urban-pulse",
-    title: "Urban Pulse",
+    title: "Creators Into Categories",
     category: "Reels",
     tags: ["REEL", "LIFESTYLE"],
     year: "2026",
