@@ -1,64 +1,59 @@
 import { Layout } from "@/components/Layout";
-import { Mail, Phone, Instagram } from "lucide-react";
+import { Mail, Instagram, Youtube } from "lucide-react";
 
 const Contact = () => {
   return (
     <Layout showEchelonFooter>
-      <section className="container-wide py-16 md:py-24 min-h-[calc(100vh-200px)]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
-          <div className="space-y-12">
-            <div>
-              <h1 className="text-display mb-6 animate-fade-in-up">
-                Let's work<br />together.
-              </h1>
-              <p className="text-xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                Interested in collaborating? Let's talk about your next project.
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              <a
-                href="mailto:hello@jordanstudio.com"
-                className="flex items-center gap-4 text-lg hover-highlight group"
-              >
-                <Mail size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span>hello@jordanstudio.com</span>
-              </a>
-
-              <a
-                href="https://instagram.com/jordanstudio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 text-lg hover-highlight group"
-              >
-                <Instagram size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span>@jordanstudio</span>
-              </a>
-
-              <div className="flex items-center gap-4 text-lg text-muted-foreground">
-                <Phone size={20} />
-                <span>+55 11 9999-9999</span>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <p className="text-label mb-2">Based in</p>
-              <p className="text-lg">São Paulo, Brazil</p>
-            </div>
+      <section className="container-wide py-12 md:py-20 min-h-[calc(100vh-200px)]">
+        <div className="max-w-3xl space-y-12">
+          <div>
+            <p className="font-pixel text-sm uppercase tracking-widest text-muted-foreground">
+              contact
+            </p>
+            <h1 className="mt-2 font-serif-display text-6xl leading-none md:text-8xl">
+              Let's edit
+              <br />
+              something good.
+            </h1>
+            <p className="mt-6 max-w-xl text-xl text-muted-foreground">
+              Reels, shorts, brand spots, or a full content system — send a note with
+              what you're working on and I'll get back within a day.
+            </p>
           </div>
 
-          {/* Image */}
-          <div className="hidden lg:block">
-            <div className="aspect-[4/5] bg-secondary overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=1000&fit=crop"
-                alt="Contact"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="space-y-4">
+            <a
+              href="mailto:hello@sameermeena.com"
+              className="flex items-center gap-4 text-lg hover-highlight group"
+            >
+              <Mail size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <span>hello@sameermeena.com</span>
+            </a>
+
+            <a
+              href="https://instagram.com/sameermeena"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-lg hover-highlight group"
+            >
+              <Instagram size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <span>@sameermeena</span>
+            </a>
+
+            <a
+              href="https://youtube.com/@sameermeena"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-lg hover-highlight group"
+            >
+              <Youtube size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
+              <span>youtube.com/@sameermeena</span>
+            </a>
+          </div>
+
+          <div>
+            <p className="text-label mb-2">Based</p>
+            <p className="text-lg">Working remotely · available worldwide</p>
           </div>
         </div>
       </section>

@@ -1,75 +1,116 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Layout } from "@/components/Layout";
-import { projects } from "@/data/projects";
+import { VideoCard } from "@/components/VideoCard";
+import { VideoPlayerDialog } from "@/components/VideoPlayerDialog";
+import { projects, type Project, type Platform } from "@/data/projects";
+
+const FILTERS: (Platform | "All")[] = ["All", "Reels", "TikTok", "Shorts", "Commercial"];
 
 const Index = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState<Project | null>(null);
+  const [open, setOpen] = useState(false);
+  const [filter, setFilter] = useState<Platform | "All">("All");
 
-  // Get 8 unique cover images from projects for the grid (4x2)
-  const gridImages = projects.slice(0, 8).map(p => p.coverImage);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    
-    const rect = containerRef.current.getBoundingClientRect();
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Calculate offset from center (normalized to -1 to 1)
-    const x = (e.clientX - rect.left - centerX) / centerX;
-    const y = (e.clientY - rect.top - centerY) / centerY;
-    
-    setMousePosition({ x, y });
+  const handlePlay = (p: Project) => {
+    setActive(p);
+    setOpen(true);
   };
 
+  const visible = filter === "All" ? projects : projects.filter((p) => p.platform === filter);
+
   return (
-    <Layout hideFooter noPadding>
-      <section 
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-        className="relative h-screen overflow-hidden"
-      >
-        {/* Image Grid Background with Parallax - 4 columns x 2 rows */}
-        <div 
-          className="absolute inset-0 flex items-center justify-center transition-transform duration-700 ease-out"
-          style={{
-            transform: `translate(${-mousePosition.x * 40}px, ${-mousePosition.y * 40}px)`,
-          }}
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 p-12 md:p-16 w-full max-w-7xl">
-            {gridImages.map((image, index) => (
-              <div 
-                key={index}
-                className="aspect-[3/4] overflow-hidden"
-              >
-                <img
-                  src={image}
-                  alt=""
-                  className="w-full h-full object-cover opacity-60"
-                />
-              </div>
-            ))}
+    <Layout hideFooter>
+      <section className="container-wide py-8 md:py-12">
+        {/* Folder-style hero card */}
+        <div className="relative mx-auto max-w-5xl">
+          {/* Left tab */}
+          <div className="folder-tab absolute -top-6 left-8 rounded-t-lg px-5 py-2">
+            <p className="font-pixel text-sm uppercase tracking-widest text-foreground">
+              Sameer's Portfolio
+            </p>
+          </div>
+          {/* Right tab */}
+          <div className="folder-tab absolute -top-6 right-8 rounded-t-lg px-5 py-2">
+            <p className="font-pixel text-sm text-foreground">2026</p>
+          </div>
+
+          <div className="paper-card relative overflow-visible p-8 md:p-16">
+            {/* Sticky note */}
+            <div className="sticky-note absolute -top-6 right-16 hidden w-40 rotate-6 rounded-sm p-4 md:block">
+              <p className="font-pixel text-lg leading-tight uppercase text-accent-foreground">
+                Short-form
+                <br />
+                video
+                <br />
+                editor
+              </p>
+            </div>
+
+            {/* Wordmark */}
+            <div className="flex flex-col items-center justify-center py-10 md:py-16">
+              <p className="font-pixel text-lg uppercase tracking-widest text-muted-foreground">
+                the work of
+              </p>
+              <h1 className="mt-2 text-center font-serif-display text-6xl leading-none tracking-tight text-foreground md:text-[9rem]">
+                portfolio
+              </h1>
+              <p className="mt-6 font-pixel text-2xl uppercase tracking-widest text-foreground">
+                — Sameer Meena —
+              </p>
+            </div>
+
+            {/* Bio */}
+            <div className="mx-auto mt-4 max-w-2xl text-center">
+              <p className="font-serif-display text-xl italic text-muted-foreground md:text-2xl">
+                Reels, shorts &amp; social-first edits with rhythm and taste.
+                Currently editing for creators, founders and small brands.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-background/30" />
-
-        {/* Centered Title - Overlaid */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground">
-            Jordan Studio
-          </h1>
+        {/* Filter pills */}
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-2">
+          {FILTERS.map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`rounded-full border px-4 py-1.5 font-pixel text-sm uppercase tracking-widest transition-all ${
+                filter === f
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border text-foreground/70 hover:border-foreground hover:text-foreground"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
         </div>
 
-        {/* Bio - Bottom Left */}
-        <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 z-10 max-w-xs md:max-w-sm">
-          <p className="text-sm md:text-base font-sans text-foreground/80 leading-relaxed">
-            Hi! I'm Jordan, an independent artist and designer specializing in brand identity, illustration, and visual design. I help brands tell their stories through thoughtful, distinctive creative work.
+        {/* Grid */}
+        <div className="mt-8 grid grid-cols-2 gap-4 md:mt-12 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+          {visible.map((p, i) => (
+            <VideoCard key={p.id} project={p} onPlay={handlePlay} index={i} />
+          ))}
+        </div>
+
+        {/* Footer sign-off */}
+        <div className="mt-24 flex flex-col items-center gap-2 border-t border-separator pt-10 pb-4 text-center">
+          <p className="font-serif-display text-3xl italic text-foreground">
+            Have an edit in mind?
+          </p>
+          <a
+            href="/contact"
+            className="font-pixel text-lg uppercase tracking-widest text-primary hover:underline"
+          >
+            → get in touch
+          </a>
+          <p className="mt-6 font-pixel text-sm uppercase tracking-widest text-muted-foreground">
+            © {new Date().getFullYear()} Sameer Meena
           </p>
         </div>
       </section>
+
+      <VideoPlayerDialog project={active} open={open} onOpenChange={setOpen} />
     </Layout>
   );
 };
