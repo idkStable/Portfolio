@@ -4,19 +4,19 @@ import { VideoCard } from "@/components/VideoCard";
 import { VideoPlayerDialog } from "@/components/VideoPlayerDialog";
 import { projects, type Project, type Platform } from "@/data/projects";
 
-const FILTERS: (Platform | "All")[] = ["All", "Reels", "TikTok", "Shorts", "Commercial"];
+
 
 const Index = () => {
   const [active, setActive] = useState<Project | null>(null);
   const [open, setOpen] = useState(false);
-  const [filter, setFilter] = useState<Platform | "All">("All");
+  
 
   const handlePlay = (p: Project) => {
     setActive(p);
     setOpen(true);
   };
 
-  const visible = filter === "All" ? projects : projects.filter((p) => p.platform === filter);
+  const visible = projects;
 
   return (
     <Layout hideFooter>
@@ -68,23 +68,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Filter pills */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-2">
-          {FILTERS.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`rounded-full border px-4 py-1.5 font-pixel text-sm uppercase tracking-widest transition-all ${
-                filter === f
-                  ? "border-foreground bg-foreground text-background"
-                  : "border-border text-foreground/70 hover:border-foreground hover:text-foreground"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
+        
         {/* Grid */}
         <div className="mt-8 grid grid-cols-2 gap-4 md:mt-12 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
           {visible.map((p, i) => (
